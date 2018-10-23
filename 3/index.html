@@ -4,6 +4,7 @@
   Seleccionar el H1 y cambiar el color de texto a rojo
   Seleccionar la sección 1 (section-1) y agregar el color de fondo amarillo
   Seleccionar el elemento con clase counter e incrementar en 10 su valor
+
   Al hacerle click al elemento con id row-3 se debe agregar el color de fondo gris y además debe tener una transición de 1 segundo
   Seleccionar el h1 dentro de la sección y duplicar su font-size
   Seleccionar el último row dentro de la tabla (sin utilizar el id, puesto que el número de elementos podría cambiar) y agregar color de fondo rojo
@@ -62,5 +63,36 @@
 
       </fieldset>
     </form>
+
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.js"></script>
+    <script>
+
+      $("h1").css("color", "red");
+
+      $(".section-1").css("background-color", "yellow");
+
+
+      var counter = $(".counter").text();
+      counter = parseInt (counter)
+      counter = counter + 10;
+      $(".counter").text(counter);
+
+
+
+     $("#row-3").on("click", function() {
+       $(this).css("background-color", "gray");
+       $(this).hide("slow"); 
+     });
+
+
+     //$("section h1").css("font-size", "2em"); //css
+     $("section").children("h1").css("color", "blue",); //jquery
+
+
+
+     $("table tr:last-child").css("background-color", "red"); //css
+     //$("table tr").last().css ("background-color", "red"); //jquery
+
+    </script>
   </body>
 </html>
